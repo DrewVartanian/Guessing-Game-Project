@@ -75,3 +75,12 @@ input {
 .controlRow{
 	padding-top: 10px;
 }
+
+/* Modal
+================================ */
+
+.modal {
+  position: absolute;
+  top: 14%;
+  margin: 25px;
+}
