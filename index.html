@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Guessing Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+    <link href="css/my-styles.css" rel="stylesheet" media="screen">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- Navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <a class="navbar-brand text-muted" href="#">Guessing Game</a>
+      </div>
+    </div>
+    <!-- End navbar -->
+
+    <!-- Gameboard -->
+    <div class="container">
+      <div class="jumbotron">
+
+        <!-- Gameboard -->
+        <h1>Can You Guess my Number?</h1>
+        <p class="lead">I'm thinking of a number between 1 and 100.  You have five guesses.</p>
+        <div class="row">
+
+            <!-- Game Screen -->
+            <div class="jumbotron" id="gameScreen">
+              <div class="row gamesScreenRowT">
+                <span class="helperBottom"></span><b class="glyphicon glyphicon-fire" id="fire"></b>
+              </div>
+              <div class="row gamesScreenRowB">
+                <span class="helperBottom"></span><b class="glyphicon glyphicon-user" id="player"></b>
+              </div>
+            </div>
+            <!-- End Game Screen -->
+
+        </div>
+
+        <!-- Game Controls -->
+        <div class="row controlRow">
+          <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
+            <form class="form">
+              <div class="input-group">
+                <label class="sr-only" for="guessInput">Guess Number 1 through 100</label>
+                <input type="text" class="form-control" placeholder="Guess Number 1-100">
+                <span class="input-group-btn">
+                  <button type="submit" class="btn btn-primary" id="guess" type="button">Guess</button>
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="row controlRow">
+          <div class="col-xs-6 col-sm-4 col-md-2">
+            <button class="btn btn-info" type="button">Try Again</button>
+          </div>
+          <div class="col-xs-6 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-8">
+            <button class="btn btn-info" type="button">Hint</button>
+          </div>
+        </div>
+        <!-- Game Controls -->
+
+      </div>
+    </div>
+    <!-- End Gameboard -->
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

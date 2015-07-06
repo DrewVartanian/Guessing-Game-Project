@@ -1,0 +1,77 @@
+/* Layout
+================================ */
+
+body {
+	padding-top: 70px;
+}
+.container {
+	max-width: 1000px;
+}
+
+/* Jumbotron
+================================ */
+
+.jumbotron {
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.jumbotron #gameScreen{
+  background-color: #FFFB00;
+  background-image: -webkit-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:    -moz-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:     -ms-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:      -o-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:         radial-gradient(circle, white, yellow 125px, yellow);
+  padding: 0px;
+  height: 200px;
+  width: 275px;
+  margin: auto;
+}
+
+/* Glyphicons
+================================ */
+
+#fire{
+	font-size: 6em;
+	color: #FF8623;
+	vertical-align: bottom;
+}
+
+#player{
+	font-size: 5em;
+	color: #E100FF;
+	vertical-align: bottom;
+}
+
+/* Screen Rows
+================================ */
+.gamesScreenRowB {
+	height: 35%;
+}
+
+.gamesScreenRowT {
+	height: 65%;
+}
+
+.helperMid {
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.helperBottom {
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+/* Control Rows
+================================ */
+input {
+	text-align: center;
+}
+
+.controlRow{
+	padding-top: 10px;
+}
