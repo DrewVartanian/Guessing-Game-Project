@@ -23,30 +23,32 @@
     </div>
     <!-- End navbar -->
 
-    <!-- Gameboard -->
-    <div class="container" id="guessingGameboard">
-      <!-- Modal -->
-      <div class="modal fade" id="game-modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
+    <!-- Modal -->
+    <div class="modal fade" id="game-modal">
+      <div class="modal-dialog">
+        <div class="modal-content">
 
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-              <h4 class="modal-title" id='targetHint'></h4>
-            </div>
-            <div class="modal-body">
-              <button class="btn btn-info tryAgain" type="button" id="modal-try-again">Play Again</button>
-            </div>
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id='targetHint'></h4>
+          </div>
+          <div class="modal-body">
+            <button class="btn btn-info tryAgain" type="button" id="modal-try-again">Play Again</button>
           </div>
         </div>
       </div>
-      <!-- End Modal -->
+    </div>
+    <!-- End Modal -->
 
+    <!-- Gameboard -->
+    <div class="container" id="guessingGameboard">
       <div class="jumbotron">
 
         <!-- Gameboard -->
-        <h1 id="main-text">Can You Guess my Number?</h1>
-        <p class="lead" id="sub-text">I'm thinking of a number between 1 and 100.  You have five guesses.</p>
+        <div class="row">
+          <h1 id="main-text">Can You Guess my Number?</h1>
+          <p class="lead" id="sub-text">I'm thinking of a number between 1 and 100.  You have five guesses.</p>
+        </div>
         <div class="row">
 
             <!-- Game Screen -->

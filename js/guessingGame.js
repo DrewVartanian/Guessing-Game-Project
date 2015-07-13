@@ -114,7 +114,7 @@ function lose(){
 	var jumbotron = $('#guessingGameboard').find('.jumbotron');
 	var fire = $('#guessingGameboard').find('#fire');
 	$('#guessingGameboard').find('#main-text').text('You Lose!');
-	$('#guessingGameboard').find('#sub-text').text('Better Luck Next Time!');
+	$('#guessingGameboard').find('#sub-text').text('It was '+target+'. Better Luck Next Time!');
 	fire.removeClass();
 	fire.addClass('glyphicon glyphicon-fire fire-cold');
 	jumbotron.removeClass();
@@ -122,10 +122,34 @@ function lose(){
 }
 
 //Handels a wrong guess
-function wrongGuess(value,temp,direction){
+function wrongGuess(value){
+	var temp;
 	var tempClass;
+	var diff;
+	var direction;
 	var gameScreen = $('#guessingGameboard').find('#gameScreen');
 	var fire = gameScreen.find('#fire');
+
+	if(value<target){
+		direction = 'Higher';
+	}else{
+		direction = 'Lower';
+	}
+
+	
+	diff=Math.abs(value-target);
+
+	if(diff<=TEMP_DIFFS[0]){
+		temp=0;
+	}else if(diff<=TEMP_DIFFS[1]){
+		temp=1;
+	}else if(diff<=TEMP_DIFFS[2]){
+		temp=2;
+	}else if(diff<=TEMP_DIFFS[3]){
+		temp=3;
+	}else{
+		temp=4;
+	}
 
 	$('#guessingGameboard').find('#main-text').text('You Are '+TEMP_DESC[temp]+'!');
 	$('#guessingGameboard').find('#sub-text').text('You Tried '+value+', Now Try '+direction+'!');
@@ -159,9 +183,6 @@ function wrongGuess(value,temp,direction){
 //Recieves and handles all guesses that are submited
 function guess(event){
 	var val = +$(this).find('#guessInput').val();
-	var direction;
-	var diff;
-	var temp;
 
 	if(wonGame){
 		modalMessage('Congrats! Think you can do it again?',true);
@@ -200,29 +221,8 @@ function guess(event){
 		event.preventDefault();
 		return;
 	}
-	
-	if(val<target){
-		direction = 'Higher';
-	}else{
-		direction = 'Lower';
-	}
 
-	
-	diff=Math.abs(val-target);
-
-	if(diff<=TEMP_DIFFS[0]){
-		temp=0;
-	}else if(diff<=TEMP_DIFFS[1]){
-		temp=1;
-	}else if(diff<=TEMP_DIFFS[2]){
-		temp=2;
-	}else if(diff<=TEMP_DIFFS[3]){
-		temp=3;
-	}else{
-		temp=4;
-	}
-
-	wrongGuess(val,temp,direction);
+	wrongGuess(val);
 
 	$('#guessingGameboard').find('#guessInput').val('');
 
