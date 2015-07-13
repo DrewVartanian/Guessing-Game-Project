@@ -11,6 +11,7 @@
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
+    <link rel="shortcut icon" href="img/fire.png">
   </head>
   <body>
 
@@ -22,35 +23,36 @@
     </div>
     <!-- End navbar -->
 
-    <!-- Modal -->
-    <div class="modal fade" id="hintModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
+    <!-- Gameboard -->
+    <div class="container" id="guessingGameboard">
+      <!-- Modal -->
+      <div class="modal fade" id="game-modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
 
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Pst! Try 84!</h4>
-          </div>
-          <div class="modal-body">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+              <h4 class="modal-title" id='targetHint'></h4>
+            </div>
+            <div class="modal-body">
+              <button class="btn btn-info tryAgain" type="button" id="modal-try-again">Play Again</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- End Modal -->
-
-    <!-- Gameboard -->
-    <div class="container">
+      <!-- End Modal -->
+    
       <div class="jumbotron">
 
         <!-- Gameboard -->
-        <h1>Can You Guess my Number?</h1>
-        <p class="lead">I'm thinking of a number between 1 and 100.  You have five guesses.</p>
+        <h1 id="main-text">Can You Guess my Number?</h1>
+        <p class="lead" id="sub-text">I'm thinking of a number between 1 and 100.  You have five guesses.</p>
         <div class="row">
 
             <!-- Game Screen -->
-            <div class="jumbotron" id="gameScreen">
+            <div class="jumbotron start" id="gameScreen">
               <div class="row gamesScreenRowT">
-                <span class="helperBottom"></span><b class="glyphicon glyphicon-fire" id="fire"></b>
+                <span class="helperBottom"></span><b class="glyphicon glyphicon-fire fire-cold" id="fire"></b>
               </div>
               <div class="row gamesScreenRowB">
                 <span class="helperBottom"></span><b class="glyphicon glyphicon-user" id="player"></b>
@@ -63,12 +65,12 @@
         <!-- Game Controls -->
         <div class="row controlRow">
           <div class="col-xs-8 col-xs-offset-2 col-md-6 col-md-offset-3">
-            <form class="form">
+            <form class="form" autocomplete="off" id="guessForm">
               <div class="input-group">
                 <label class="sr-only" for="guessInput">Guess a Number: 1 through 100</label>
-                <input type="text" class="form-control" placeholder="Guess a Number: 1-100">
+                <input type="text" class="form-control" id="guessInput" placeholder="Guess a Number: 1-100">
                 <span class="input-group-btn">
-                  <button type="submit" class="btn btn-primary" id="guess" type="button">Guess</button>
+                  <button type="submit" class="btn btn-primary" id="guessBtn" type="button">Guess</button>
                 </span>
               </div>
             </form>
@@ -76,10 +78,11 @@
         </div>
         <div class="row controlRow">
           <div class="col-xs-6 col-sm-4 col-md-2">
-            <button class="btn btn-info" type="button">Try Again</button>
+            <button class="btn btn-info tryAgain" type="button">Try Again</button>
           </div>
           <div class="col-xs-6 col-sm-4 col-sm-offset-4 col-md-2 col-md-offset-8">
-            <button class="btn btn-info" type="button" data-toggle="modal" href="#hintModal">Hint</button>
+            <!--<button class="btn btn-info" type="button" data-toggle="modal" href="#hintModal">Hint</button>-->
+            <button class="btn btn-info" type="button" id="hint">Hint</button>
           </div>
         </div>
         <!-- Game Controls -->
@@ -90,5 +93,6 @@
 
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/guessingGame.js"></script>
   </body>
 </html>

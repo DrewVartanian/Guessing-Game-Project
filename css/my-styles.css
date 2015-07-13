@@ -16,42 +16,120 @@ body {
   padding-bottom: 50px;
 }
 
-.jumbotron #gameScreen{
-  background-color: #FFFB00;
-  background-image: -webkit-radial-gradient(circle, white, yellow 125px, yellow);
-  background-image:    -moz-radial-gradient(circle, white, yellow 125px, yellow);
-  background-image:     -ms-radial-gradient(circle, white, yellow 125px, yellow);
-  background-image:      -o-radial-gradient(circle, white, yellow 125px, yellow);
-  background-image:         radial-gradient(circle, white, yellow 125px, yellow);
+.jumbotron #gameScreen {
   padding: 0px;
   height: 200px;
   width: 275px;
   margin: auto;
 }
 
+.win {
+  background-color: #yellow;
+  background-image: -webkit-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:    -moz-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:     -ms-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:      -o-radial-gradient(circle, white, yellow 125px, yellow);
+  background-image:         radial-gradient(circle, white, yellow 125px, yellow);
+}
+
+.s-hot {
+  background-color: #yellow;
+  background-image: -webkit-radial-gradient(circle, white, yellow 225px, yellow);
+  background-image:    -moz-radial-gradient(circle, white, yellow 225px, yellow);
+  background-image:     -ms-radial-gradient(circle, white, yellow 225px, yellow);
+  background-image:      -o-radial-gradient(circle, white, yellow 225px, yellow);
+  background-image:         radial-gradient(circle, white, yellow 225px, yellow);
+}
+
+.hot {
+  background-color: #yellow;
+  background-image: -webkit-radial-gradient(circle, white, yellow 300px, yellow);
+  background-image:    -moz-radial-gradient(circle, white, yellow 300px, yellow);
+  background-image:     -ms-radial-gradient(circle, white, yellow 300px, yellow);
+  background-image:      -o-radial-gradient(circle, white, yellow 300px, yellow);
+  background-image:         radial-gradient(circle, white, yellow 300px, yellow);
+}
+
+.warm {
+  background-color: #yellow;
+  background-image: -webkit-radial-gradient(circle, white, yellow 500px, yellow);
+  background-image:    -moz-radial-gradient(circle, white, yellow 500px, yellow);
+  background-image:     -ms-radial-gradient(circle, white, yellow 500px, yellow);
+  background-image:      -o-radial-gradient(circle, white, yellow 500px, yellow);
+  background-image:         radial-gradient(circle, white, yellow 500px, yellow);
+}
+
+.cold {
+  background-color: #aqua;
+  background-image: -webkit-radial-gradient(circle, white, aqua 300px, aqua);
+  background-image:    -moz-radial-gradient(circle, white, aqua 300px, aqua);
+  background-image:     -ms-radial-gradient(circle, white, aqua 300px, aqua);
+  background-image:      -o-radial-gradient(circle, white, aqua 300px, aqua);
+  background-image:         radial-gradient(circle, white, aqua 300px, aqua);
+}
+
+.i-cold {
+  background-color: #aqua;
+  background-image: -webkit-radial-gradient(circle, white, aqua 125px, aqua);
+  background-image:    -moz-radial-gradient(circle, white, aqua 125px, aqua);
+  background-image:     -ms-radial-gradient(circle, white, aqua 125px, aqua);
+  background-image:      -o-radial-gradient(circle, white, aqua 125px, aqua);
+  background-image:         radial-gradient(circle, white, aqua 125px, aqua);
+}
+
+.start {
+  background-color: #lightgreen;
+  background-image: -webkit-radial-gradient(circle, white, lightgreen 100px, lightgreen);
+  background-image:    -moz-radial-gradient(circle, white, lightgreen 100px, lightgreen);
+  background-image:     -ms-radial-gradient(circle, white, lightgreen 100px, lightgreen);
+  background-image:      -o-radial-gradient(circle, white, lightgreen 100px, lightgreen);
+  background-image:         radial-gradient(circle, white, lightgreen 100px, lightgreen);
+}
+
 /* Glyphicons
 ================================ */
+#player {
+  font-size: 5em;
+  color: #E100FF;
+  vertical-align: bottom;
+}
 
-#fire{
-	font-size: 6em;
+#fire {
 	color: #FF8623;
-	vertical-align: bottom;
+	vertical-align: middle;
 }
 
-#player{
-	font-size: 5em;
-	color: #E100FF;
-	vertical-align: bottom;
+.fire-cold {
+  visibility: hidden;
 }
 
+.fire-warm {
+  font-size: 1em;
+  visibility: visible;
+}
+
+.fire-hot {
+  font-size: 2em;
+  visibility: visible;
+}
+
+.fire-s-hot {
+  font-size: 3em;
+  visibility: visible;
+}
+
+.fire-win {
+  font-size: 5em;
+  visibility: visible;
+}
 /* Screen Rows
 ================================ */
 .gamesScreenRowB {
-	height: 35%;
+	height: 50%;
 }
 
 .gamesScreenRowT {
-	height: 65%;
+	height: 50%;
 }
 
 .helperMid {
@@ -80,7 +158,13 @@ input {
 ================================ */
 
 .modal {
-  position: absolute;
-  top: 14%;
-  margin: 25px;
+  margin: 125px;
+}
+
+.invisible {
+  display: none;
+}
+
+.visible {
+  display: inline;
 }
