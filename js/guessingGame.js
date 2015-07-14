@@ -14,16 +14,13 @@ $(document).ready(function(){
 		game.hint();
 	});
 	$('#guessingGameboard').on('keypress','#guessInput',function(event){
-		var input = this;
-		game.guessCharFilter(event,input);
+		game.guessCharFilter(event,this);
 	});
 	$('#guessingGameboard').on('keydown','#guessInput',function(event){
-		var input = this;
-		game.guessInputEnter(event,input);
+		game.guessInputEnter(event,this);
 	});
 	$('#guessingGameboard').on('submit','#guessForm',function(event){
-		var form = this;
-		game.guess(event,form);
+		game.guess(event,this);
 	});
 
 });
