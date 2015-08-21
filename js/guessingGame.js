@@ -2,11 +2,10 @@
 //
 //By Drew Vartanian
 
-
 //Generate the game and controls on document ready
 $(document).ready(function(){
 	game = new GameObj();
-	
+
 	$('.tryAgain').on('click',function(){
 		game.tryAgain();
 	});
@@ -31,7 +30,7 @@ function GameObj(){
 	this.TEMP_DESC = ['Super Hot','Hot','Warm','Cold','Ice Cold'];  //Should have 5 entries ordered from most accurate to least accurate
 	this.TEMP_DIFFS = [5,10,15,25];									 //Should have 4 entries ordered from lowest to highest
 	this.INPUT_RANGE = [1,100];										 //Should have 2 entries ordered from lowest to highest
-	
+
 	this.targetVal;			//Game's target number
 	this.guessHistory;		//History of numbers guessed in the current game
 	this.hintText;			//The text to be displayed when a hint is asked for;
@@ -51,7 +50,7 @@ GameObj.prototype.genTarget = function(){
 	$('#guessingGameboard').find('#sub-text').text("I'm thinking of a number between 1 and 100.  You have five guesses.");
 	$('#guessingGameboard').find('#gameScreen').addClass('start');
 	$('#guessingGameboard').find('#fire').addClass('glyphicon glyphicon-fire fire-cold');
-}
+};
 
 //Clears the board and generates a new game
 GameObj.prototype.tryAgain = function(){
@@ -82,10 +81,10 @@ GameObj.prototype.hint = function(){
 
 //Attempts to filter input to only allow integers between 1-100
 GameObj.prototype.guessCharFilter = function(event,input){
-	
+
 	var val;
 	var valNew;
-	
+
 	if(event.keyCode<48 || event.keyCode>57){
 		event.preventDefault();
 		return;
@@ -153,7 +152,7 @@ GameObj.prototype.wrongGuess = function(value){
 		direction = 'Lower';
 	}
 
-	
+
 	diff=Math.abs(value-this.targetVal);
 
 	if(diff<=this.TEMP_DIFFS[0]){
